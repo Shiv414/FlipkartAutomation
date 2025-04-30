@@ -1,0 +1,25 @@
+{
+  "ValidCredentials": {
+    "Username": "valid_user@flipkart.com",
+    "Password": "Valid@123"
+  },
+  "InvalidCredentials": {
+    "Username": "invalid_user@test.com",
+    "Password": "Invalid@123"
+  },
+  "Products": {
+    "SearchProduct1": "iPhone 15",
+    "SearchProduct2": "Samsung Galaxy S24",
+    "SearchProduct3": "MacBook Air"
+  },
+  "Urls": {
+    "BaseUrl": "https://www.flipkart.com/",
+    "LoginUrl": "https://www.flipkart.com/account/login",
+    "CartUrl": "https://www.flipkart.com/viewcart"
+  },
+  "TestConfig": {
+    "Browser": "Chrome",
+    "Timeout": 30,
+    "Headless": false
+  }
+}
