@@ -1,33 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework> <!-- Adjust for .NET Core 3.1/6.0/etc. -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
+    <IsPackable>false</IsPackable> <!-- Prevents publishing as a NuGet package -->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="6.0.0" />
-    <PackageReference Include="ExtentReports" Version="5.0.4" />
-    <PackageReference Include="ExtentReports.signed" Version="3.1.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.4" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="NUnit" Version="3.14.0" />
-    <PackageReference Include="NUnit.Analyzers" Version="3.9.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageReference Include="Selenium.Essentials" Version="2.0.2" />
-    <PackageReference Include="Selenium.Support" Version="4.31.0" />
-    <PackageReference Include="Selenium.WebDriver" Version="4.31.0" />
-    <PackageReference Include="Selenium.WebDriver.Extensions" Version="4.1.0" />
-    <PackageReference Include="Serilog" Version="4.2.0" />
-    <PackageReference Include="WebDriverManager" Version="2.17.5" />
+    <!-- Package References -->
+    <PackageReference Include="Selenium.WebDriver" Version="4.16.2" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="AventStack.ExtentReports" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="NUnit.Framework" />
+    <!-- Ensure config/testdata files are copied to output -->
+    <None Update="TestData\TestData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-
 </Project>
